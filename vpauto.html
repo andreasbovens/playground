@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>simple resp design example</title>
+		<style>
+		@viewport {width: auto;}
+		body {font-family: Helvetica;}
+		span {font-weight: bold;}
+		article {border: 5px solid #3CA2FD;}
+		aside {border: 5px solid #F8D800;}
+		article, aside {width: 100%; box-sizing: border-box; padding: 10px;} 
+		@media screen and (min-width: 480px) {
+			article {width: 68%; float: left;}
+			aside {width: 30%; float: right;}
+		}
+		@media screen and (min-width: 800px) {
+			article, aside {padding: 20px;}
+		}
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>Article text.</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non elit non enim consectetur iaculis ut ac mi. Sed adipiscing nulla id ipsum placerat congue. Quisque nec diam eget libero convallis iaculis.</p>
+			<p>Nam feugiat purus id diam placerat suscipit. Cras nec tincidunt leo. Integer tincidunt porttitor enim, et elementum augue pellentesque id. Quisque leo velit, tincidunt in pretium in, cursus eu elit. Etiam vitae lacus ligula.</p>
+		</article>
+		<aside>
+			<h1>Aside text.</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non elit non enim consectetur iaculis ut ac mi.</p>
+		</aside>
+	</body>
+</html>
