@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Art direction use case</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<style>
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 13px;
+			}
+			#features, output {
+				display: block;
+			}
+			#features {
+				margin: 0 0 20px 0;
+			}
+			.feature {
+				display: inline-block;
+				padding: 1px 10px;
+			}
+			.feature--false {
+				background: #EEE;
+			}
+			.feature--true {
+				background: #00A700;
+				color: #FFF;
+			}
+		</style>
+		<script>
+			document.createElement('picture');
+		</script>
+		<script src="picturefill.js" async></script>
+	</head>
+	<body>
+		<h1>Art direction use case</h1>
+		<div id="features">
+			<span class="feature feature--false">sizes</span>
+			<span class="feature feature--false">dpi</span>
+			<span class="feature feature--false">mime</span>
+			<span class="feature feature--true">art</span>
+		</div>
+		<picture>
+			<source media="(min-width: 1024px)" srcset="opera-big.jpg">
+			<img srcset="opera-small.jpg" alt="The Oslo Opera House">
+		</picture>
+		<output></output>
+		<p>Note: you may have to refresh the page after resizing!</p>
+		<p>&larr; <a href="http://dev.opera.com/articles/responsive-images#artdirectionusecase">back to the Dev.Opera article</a></p>
+		<script>
+			(function() {
+				var image = document.images[0];
+				var output = document.getElementsByTagName('output')[0];
+				var option1 = document.getElementById('option1');
+				var option2 = document.getElementById('option2')
+				function report() {
+					var sourceUrl = image.currentSrc || image.src;
+					var urlArray = sourceUrl.split('/');
+					var source = urlArray.pop();
+					output.innerHTML = 'Source image used is <strong>' + source + '</strong>.';
+				}
+				window.addEventListener('load', report);
+				window.addEventListener('resize', report);
+			}());
+		</script>
+	</body>
+</html>
